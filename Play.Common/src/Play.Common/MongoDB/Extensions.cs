@@ -4,10 +4,9 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
-using Play.Catalog.Service.Settings;
-using Play.Catalog.Service.Entities;
+using Play.Common.Settings;
 
-namespace Play.Catalog.Service.Repositories
+namespace Play.Common.MongoDB
 {
     public static class Extensions
     {
@@ -24,8 +23,6 @@ namespace Play.Catalog.Service.Repositories
                 var mongoClient = new MongoClient(mongoDBSettings.ConnectionString);
                 return mongoClient.GetDatabase(serviceSettings.ServiceName);
             });
-
-
 
             return services;
         }
