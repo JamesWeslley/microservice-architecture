@@ -1,0 +1,3 @@
+
+# Go to directory "C:\projetos\microservice-architecture\play.inventory\src\play.inventory.service" and execute:
+dotnet add package Play.Common
