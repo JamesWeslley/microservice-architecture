@@ -7,3 +7,8 @@ dotnet add package Microsoft.Extensions.Configuration.binder
 dotnet add package Microsoft.Extensions.DependencyInjection
 
 dotnet pack -o ..\..\..\packages\
+
+dotnet add package MassTransit.AspNetCore --version 7.1.3
+dotnet add package MassTransit.RabbitMQ --version 7.1.3
+
+dotnet pack -p:PackageVersion=1.0.1 -o ..\..\..\packages\

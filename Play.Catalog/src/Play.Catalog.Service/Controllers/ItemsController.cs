@@ -71,7 +71,7 @@ namespace Play.Catalog.Service.Controllers
 
             if (existingItem == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
             existingItem.Name = updateItemDto.Name;
