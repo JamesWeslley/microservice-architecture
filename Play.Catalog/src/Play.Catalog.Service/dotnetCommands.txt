@@ -3,3 +3,9 @@ dotnet nuget add source C:\projetos\microservice-architecture\packages -n PlayEc
 dotnet nuget list source
 
 dotnet add package Play.Common
+
+# Go to directory "C:\projetos\microservice-architecture\play.catalog\src" and execute:
+dotnet new classlib -n Play.Catalog.Contracts --framework net5.0
+
+# Go to directory "C:\projetos\microservice-architecture\play.catalog\src\play.catalog.service" and execute:
+dotnet add reference ..\play.catalog.contracts\play.catalog.contracts.csproj
