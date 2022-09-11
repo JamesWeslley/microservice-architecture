@@ -9,3 +9,6 @@ dotnet new classlib -n Play.Catalog.Contracts --framework net5.0
 
 # Go to directory "C:\projetos\microservice-architecture\play.catalog\src\play.catalog.service" and execute:
 dotnet add reference ..\play.catalog.contracts\play.catalog.contracts.csproj
+
+dotnet add package MassTransit.AspNetCore --version 7.1.3
+dotnet add package MassTransit.RabbitMQ --version 7.1.3
