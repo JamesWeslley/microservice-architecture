@@ -1,6 +1,9 @@
+using System;
 using System.Reflection;
+using GreenPipes;
 using MassTransit;
 using MassTransit.Definition;
+using MassTransit.PipeConfigurators;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Play.Common.Settings;
@@ -22,6 +25,10 @@ namespace Play.Common.MassTransit
                     var rabbitMQSettings = configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
                     configurator.Host(rabbitMQSettings.Host);
                     configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
+                    configurator.UseMessageRetry(retryConfigutator =>
+                    {
+                        retryConfigutator.Interval(3, TimeSpan.FromSeconds(5));
+                    });
                 });
             });
 
